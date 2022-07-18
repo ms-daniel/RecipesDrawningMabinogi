@@ -187,9 +187,9 @@ public class createMenu {
 				v2 = (int) (244 * (Float.parseFloat(p2.getText())/100)) + v1;
 				v3 = (int) (244 * (Float.parseFloat(p3.getText())/100)) + v2;
 				
-				System.out.println(v1 + "\n" + v2 + "\n" + v3);
+				//System.out.println(v1 + "\n" + v2 + "\n" + v3);
 						
-				createI.makeLines(v1, v2, v3);
+				createI.doLines(v1, v2, v3);
 				
 				imgV.setIcon(createI.getImage());
 				save.setEnabled(true);
@@ -199,7 +199,7 @@ public class createMenu {
 		save.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
-					createI.saveImage(new String("Tentativa"));
+					createI.saveImage(new String(JOptionPane.showInputDialog(pan, "Name of imagem:")));
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
