@@ -11,7 +11,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
 public class createImagem {
-	private int  width = 245, heigh = 12;
+	private int  width = 245, heigh = 40;
 	private BufferedImage buffer;
 	private Graphics g;
 	
@@ -25,11 +25,28 @@ public class createImagem {
 	}
 	
 	public void doFont(String ig1,String ig2,String ig3) {
+		int widthL = g.getFontMetrics().stringWidth(ig3) - 4; //return width of string
+		
+		int w2 = g.getFontMetrics().stringWidth(ig2),
+			w1 = g.getFontMetrics().stringWidth(ig1);
+		
+		int mP = ((244 - w1) - widthL) / 2 - (w2/2); // calcular ponto medio e posição para mostrar o texto 2
+		
+		System.out.println(
+				g.getFontMetrics().stringWidth(ig1) + "\n" +
+				widthL + "\n" +
+				mP + "\n");
+		
 		Font font = new Font("Times New Roman", Font.BOLD, 12);
 		
 		g.setColor( Color.BLUE );
 		g.setFont( font );
-		g.drawString("Teste 1", 0, 20); 
+		
+		g.drawString(ig1, 0, 25); 
+		
+		g.drawString(ig2, mP, 25); 
+		
+		g.drawString(ig3, 244-widthL, 25); 
 	}
 	
 	public void doLines(int p1, int p2, int p3) {
@@ -39,16 +56,16 @@ public class createImagem {
         g.setColor( Color.BLUE );
         
         // linha inicial e final
-        g.drawLine(0, 0, 0, heigh);
-        g.drawLine(244, 0, 244, heigh);
+        g.drawLine(0, 0, 0, 12);
+        g.drawLine(244, 0, 244, 12);
         //
         
         g.setColor( Color.red );
-        g.drawLine(p1, 0, p1, heigh);
+        g.drawLine(p1, 0, p1, 12);
         
-        g.drawLine(p2, 0, p2, heigh);
+        g.drawLine(p2, 0, p2, 12);
 
         if(p3 != 0)
-        	g.drawLine(p3, 0, p3, heigh);
+        	g.drawLine(p3, 0, p3, 12);
     }
 }

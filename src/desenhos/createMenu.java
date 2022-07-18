@@ -124,16 +124,16 @@ public class createMenu {
 		p3.setText("0");
 		
 		imgV = new JLabel();
-		imgV.setBounds(30, 65, 300, 20);
+		imgV.setBounds(30, 65, 300, 40);
 		
 		
 		create = new JButton("Create Image");
 		create.setMargin(margem);
-		create.setBounds(80, 95, 100, 30);
+		create.setBounds(80, 110, 100, 30);
 		
 		save = new JButton("Save Image");
 		save.setMargin(margem);
-		save.setBounds(190, 95, 100, 30);
+		save.setBounds(190, 110, 100, 30);
 		save.setEnabled(false);
 		
 		
@@ -190,6 +190,7 @@ public class createMenu {
 				//System.out.println(v1 + "\n" + v2 + "\n" + v3);
 						
 				createI.doLines(v1, v2, v3);
+				createI.doFont("tes", "test", "paralelelpido");
 				
 				imgV.setIcon(createI.getImage());
 				save.setEnabled(true);
