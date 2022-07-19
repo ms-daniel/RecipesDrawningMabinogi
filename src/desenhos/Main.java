@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
  
- public class ExemploImagem {
+ public class Main {
 	
 	 
     public static void main(String[] args) {

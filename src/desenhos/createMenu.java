@@ -99,29 +99,33 @@ public class createMenu {
 		pt3.setBounds(345, 0, 80, 30);
 		
 		//textfields
-		t1 = new JTextField();
+		t1 = new JTextField("");
+		t1.setToolTipText("Any");
 		t1.setBounds(5, 27, 80, 30);
 		
-		t2 = new JTextField();
+		t2 = new JTextField("");
+		t2.setToolTipText("Any");
 		t2.setBounds(130, 27, 80, 30);
 		
-		t3 = new JTextField();
+		t3 = new JTextField("");
+		t3.setToolTipText("Any");
 		t3.setBounds(255, 27, 80, 30);
+		//
 		
 		p1 = new JTextField();
 		p1.setDocument(new JTextFieldLimit(2));
 		p1.setBounds(90, 27, 20,30);
-		p1.setText("10");
+		p1.setText("");
 		
 		p2 = new JTextField();
 		p2.setDocument(new JTextFieldLimit(2));
 		p2.setBounds(215, 27, 20,30);
-		p2.setText("80");
+		p2.setText("");
 		
 		p3 = new JTextField();
 		p3.setDocument(new JTextFieldLimit(2));
 		p3.setBounds(345, 27, 20,30);
-		p3.setText("0");
+		p3.setText("");
 		
 		imgV = new JLabel();
 		imgV.setBounds(30, 65, 300, 40);
@@ -137,7 +141,7 @@ public class createMenu {
 		save.setEnabled(false);
 		
 		
-		//limitações para porcentagem ser apenas numeros
+		//limitaï¿½ï¿½es para porcentagem ser apenas numeros
 		p1.addKeyListener(new KeyAdapter() { //aceita apenas numeros
 	         public void keyPressed(KeyEvent ke) {
 	             if ((ke.getKeyChar() >= '0' && ke.getKeyChar() <= '9') 
@@ -182,15 +186,43 @@ public class createMenu {
 		
 		create.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				String i1 = new String(), i2 = new String(), i3 = new String();
 				
-				v1 = (int) (244 * (Float.parseFloat(p1.getText())/100));
-				v2 = (int) (244 * (Float.parseFloat(p2.getText())/100)) + v1;
-				v3 = (int) (244 * (Float.parseFloat(p3.getText())/100)) + v2;
+				if(t1.getText().replaceAll(" ", "").equals("")) {
+					i1 = "Any";
+				}else{
+					i1 = t1.getText();
+				}
+					
+				if(t2.getText().replaceAll(" ", "").equals("")) {
+					i2 = "Any";
+				}else{
+					i2 = t2.getText();
+				}
+					
+				if(t3.getText().replaceAll(" ", "").equals("")) {
+					i3 = "Any";
+				}else{
+					i3 = t3.getText();
+				}
+					
+				if(!p1.getText().equals(""))
+					v1 = (int) (244 * (Float.parseFloat(p1.getText())/100));
+				else
+					v1 = 0;
 				
-				//System.out.println(v1 + "\n" + v2 + "\n" + v3);
+				if(!p2.getText().equals(""))
+					v2 = (int) (244 * (Float.parseFloat(p2.getText())/100)) + v1;
+				else
+					v2 = 0;
+				
+				if(!p3.getText().equals(""))
+					v3 = (int) (244 * (Float.parseFloat(p3.getText())/100)) + v2;
+				else
+					v3 = 0;
 						
 				createI.doLines(v1, v2, v3);
-				createI.doFont("tes", "test", "paralelelpido");
+				createI.doFont(i1, i2, i3);
 				
 				imgV.setIcon(createI.getImage());
 				save.setEnabled(true);
