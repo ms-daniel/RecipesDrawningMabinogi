@@ -115,20 +115,20 @@ public class createMenu {
 		p1 = new JTextField();
 		p1.setDocument(new JTextFieldLimit(2));
 		p1.setBounds(90, 27, 20,30);
-		p1.setText("");
+		p1.setText("67");
 		
 		p2 = new JTextField();
 		p2.setDocument(new JTextFieldLimit(2));
 		p2.setBounds(215, 27, 20,30);
-		p2.setText("");
+		p2.setText("23");
 		
 		p3 = new JTextField();
 		p3.setDocument(new JTextFieldLimit(2));
 		p3.setBounds(345, 27, 20,30);
-		p3.setText("");
+		p3.setText("10");
 		
 		imgV = new JLabel();
-		imgV.setBounds(30, 65, 300, 40);
+		imgV.setBounds(30, 65, 302, 40);
 		
 		
 		create = new JButton("Create Image");

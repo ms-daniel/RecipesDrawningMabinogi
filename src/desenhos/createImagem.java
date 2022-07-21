@@ -25,12 +25,14 @@ public class createImagem {
 	}
 	
 	public void doFont(String ig1,String ig2,String ig3) {
-		int widthL = g.getFontMetrics().stringWidth(ig3); //return width of string
+		int widthL = g.getFontMetrics().stringWidth(" |  " + ig3); //return width of string
 		
 		int w2 = g.getFontMetrics().stringWidth(ig2),
 			w1 = g.getFontMetrics().stringWidth(ig1);
 		
-		int mP = ((244 - w1) - widthL) / 2 - (w2/2) + 10; // calcular ponto medio e posi��o para mostrar o texto 2
+		int mP = (w1 + (300 - (w1 + widthL)))/2; // calcular ponto medio e posi��o para mostrar o texto 2
+
+		//System.out.println(w1 + "\n" + widthL + "\n" + mP);
 		
 		Font font = new Font("Times New Roman", Font.BOLD, 12);
 		
@@ -39,9 +41,9 @@ public class createImagem {
 		
 		g.drawString(ig1 + " | ", 0, 25); 
 		
-		g.drawString(ig2 + " | ", mP, 25); 
+		g.drawString(ig2, mP, 25); 
 		
-		g.drawString(ig3, 300-widthL, 25); 
+		g.drawString(" |  " + ig3, 299-widthL, 25); 
 	}
 	
 	public void doLines(int p1, int p2, int p3) {
