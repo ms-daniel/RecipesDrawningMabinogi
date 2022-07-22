@@ -11,7 +11,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
 public class createImagem {
-	private int  width = 300, heigh = 40;
+	private int  width = 300, heigh = 27;
 	private BufferedImage buffer;
 	private Graphics g;
 	
