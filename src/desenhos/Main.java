@@ -17,9 +17,5 @@ import java.io.IOException;
     	menu.addComponents();
     	
     	frame.setVisible(true);
-		
-
     }
-     
-     
  } 
