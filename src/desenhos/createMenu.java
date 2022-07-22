@@ -39,6 +39,7 @@ public class createMenu {
 		frame = new JFrame("Create Recipe Imagem");
         frame.setBounds(0, 0, 385, 300);
         frame.setLocationRelativeTo(null);;
+        //frame.setIconImage();
         frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
 
 		
